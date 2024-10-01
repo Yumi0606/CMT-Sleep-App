@@ -1,0 +1,10 @@
+# external requirements
+numpy==1.26.4
+matplotlib==3.8.4
+h5py==3.11.0
+neptune-client==1.10.2
+scikit-image==0.23.1
+scikit-learn==1.4.2
+einops==0.7.0
+mne==1.6.1
+jupyterlab

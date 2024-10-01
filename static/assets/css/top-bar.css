@@ -1,0 +1,292 @@
+.vec-rectangle-top-bng {
+    position: absolute;
+    z-index: 0;
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: 90px;
+    mix-blend-mode: normal;
+    background: rgba(255, 255, 255, 1);
+    right: 0px;
+    /* border-radius: 0 0 30px 30px; */
+}
+.vec-rectangle-split-line {
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: 1006px;
+    mix-blend-mode: normal;
+    background: rgba(240, 241, 246, 1);
+    right: 1179px;
+}
+.frame-right {
+    position: absolute;
+    z-index: 2;
+    left: 260px;
+    top: 0px;
+    width: 1180px;
+    height: 1006px;
+    mix-blend-mode: normal;
+}
+.frame-right.fixed-width {
+    width: 1180px;
+}
+.frame-bXb-2 {
+    position: relative;
+    z-index: 2;
+    height: 1006px;
+    mix-blend-mode: normal;
+    background: rgba(246, 246, 246, 1);
+    overflow: hidden;
+}
+.img-NFR-1 {
+    position: absolute;
+    z-index: 0;
+    border: unset !important;
+    box-shadow: unset;
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: 34px;
+    mix-blend-mode: normal;
+    --bg-img: var(--img-url);
+    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/bcca7f081febb2b26a918215430ba19dee15dfcd.png);
+    right: 77.3701171875px;
+}
+.img-NFR-1::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    opacity: 1;
+    background-image: var(--bg-img);
+    background-size: cover;
+}
+.p-text-qNf-2 {
+    display: inline;
+    margin: 0px;
+    width: 100%;
+    text-align: left;
+}
+.text-qNf-2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    justify-content: start;
+    left: 42px;
+    top: 7px;
+    height: 24px;
+    mix-blend-mode: normal;
+    color: rgba(69, 70, 75, 1);
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+    font-family: "SourceHanSansCN-Regular";
+    letter-spacing: 0px;
+    white-space: nowrap;
+    right: 21.3701171875px;
+}
+.text-qNf-2-br {
+    display: block;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+.span-RRX-1 {
+    text-decoration-line: none;
+}
+.img-Vjk-3 {
+    position: absolute;
+    z-index: 2;
+    border: unset !important;
+    box-shadow: unset;
+    left: 90.84005859375px;
+    top: 14.000001907348633px;
+    width: 20px;
+    height: 11px;
+    --bg-img: var(--img-url);
+    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/3246897774360930b2e616370efd5775deb6f13a.png);
+}
+.frame-PkB-2 {
+    position: absolute;
+    z-index: 2;
+    left: 21px;
+    top: 13px;
+    width: 72px;
+    height: 21px;
+    mix-blend-mode: normal;
+}
+.frame-PkB-2.fixed-width {
+    width: 72px;
+}
+.img-Vjk-3::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    opacity: 1;
+    background-image: var(--bg-img);
+    background-size: cover;
+}
+.frame-doctor {
+    position: absolute;
+    z-index: 1;
+    left: 44px;
+    top: 0px;
+    width: auto;
+    height: 34px;
+    mix-blend-mode: normal;
+    right: 0px;
+}
+.frame-doctor:hover {
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+.frame-doctor:hover::before {
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+.frame-doctor.fixed-width {
+    width: 111.37px;
+}
+.img-ring {
+    position: absolute;
+    z-index: 1;
+    border: unset !important;
+    box-shadow: unset;
+    left: 0px;
+    top: 2px;
+    width: auto;
+    height: 30px;
+    mix-blend-mode: normal;
+    --bg-img: var(--img-url);
+    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/c9fddb16d5f973112e1bfbb5e102c7a263874b4f.png);
+    right: 125.3701171875px;
+}
+.img-ring::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    opacity: 1;
+    background-image: var(--bg-img);
+    background-size: cover;
+}
+.img-ring:hover {
+    position: absolute;
+    content: "";
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+.frame-zzz {
+    position: absolute;
+    z-index: 3;
+    left: 984px;
+    top: 26px;
+    width: auto;
+    height: 34px;
+    mix-blend-mode: normal;
+    right: 40.6298828125px;
+}
+.frame-zzz.fixed-width {
+    width: 155.37px;
+}
+.vec-rectangle-container {
+    position: absolute;
+    z-index: 0;
+    left: 0px;
+    top: 0px;
+    width: 264px;
+    height: 42px;
+    border-radius: 7px;
+    mix-blend-mode: normal;
+    box-sizing: border-box;
+    opacity: 1;
+}
+.vec-rectangle-container::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+    pointer-events: none;
+    border-radius: 7px;
+    border: 1px solid rgba(205, 207, 212, 1);
+}
+.p-text-search {
+    display: inline;
+    margin: 0px;
+    width: 100%;
+    text-align: left;
+}
+.text-search {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    justify-content: start;
+    left: 32px;
+    top: 0px;
+    height: 21px;
+    mix-blend-mode: normal;
+    color: rgba(79, 88, 103, 1);
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 1;
+    font-family: "SourceHanSansCN-Regular";
+    letter-spacing: 0px;
+    white-space: nowrap;
+}
+.text-search-br {
+    display: block;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+.img-search-button {
+    position: absolute;
+    z-index: 1;
+    border: unset !important;
+    box-shadow: unset;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    mix-blend-mode: normal;
+    --bg-img: var(--img-url);
+    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/88b6a26e9206d811fc9c6e08f4bd479bf094bc22.png);
+}
+.img-search-button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    opacity: 1;
+    background-image: var(--bg-img);
+    background-size: cover;
+}
+.frame-top-left-container {
+    position: absolute;
+    z-index: 4;
+    left: 60px;
+    top: 24px;
+    width: 264px;
+    height: 42px;
+    mix-blend-mode: normal;
+}
+.frame-top-left-container.fixed-width {
+    width: 264px;
+}

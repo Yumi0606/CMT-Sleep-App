@@ -1,0 +1,1373 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" href="{{ url_for('static', filename='assets/images/CMT-logo.png') }}" />
+        <meta name="description" content="可解释性多导睡眠监测系统" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>脑电监测</title>
+        <link href="{{ url_for('static', filename='assets/css/side-bar.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/css/top-bar.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/css/img-upload-icon.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <style>
+                .img-eeg {
+                    position: absolute;
+                    top: 5%;
+                    left: 5%;
+                    clip-path: polygon(0 20%, 100% 20%, 100% 100%, 0 100%);
+                }
+
+                .vec-rectangle-qYn-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 745px;
+                    height: 423px;
+                    border-radius: 14px;
+                    mix-blend-mode: normal;
+                    background: rgba(255, 255, 255, 1);
+                }
+                .span-JpZ-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-kYA-1 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-kYA-1 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 0;
+                    justify-content: start;
+                    left: 0px;
+                    top: 0px;
+                    height: 27px;
+                    mix-blend-mode: normal;
+                    color: rgba(24, 37, 36, 1);
+                    font-size: 18px;
+                    font-weight: 400;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Regular";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .img-RiF-2 {
+                    position: absolute;
+                    z-index: 1;
+                    border: unset !important;
+                    box-shadow: unset;
+                    left: 657.0000610351562px;
+                    top: 9px;
+                    width: 18px;
+                    height: 4px;
+                    mix-blend-mode: normal;
+                    --bg-img: var(--img-url);
+                    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/d31fca24bfc7e921ee428bea855f05e9179b37a4.png);
+                }
+                .img-RiF-2::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    opacity: 1;
+                    background-image: var(--bg-img);
+                    background-size: cover;
+                }
+                .frame-header-3 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 32px;
+                    top: 30px;
+                    width: 675px;
+                    height: 27px;
+                    mix-blend-mode: normal;
+                }
+                .span-XNd-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-IZv-1 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-IZv-1 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 0;
+                    justify-content: start;
+                    left: 103px;
+                    top: 12px;
+                    height: 16px;
+                    mix-blend-mode: normal;
+                    color: rgba(115, 123, 123, 1);
+                    font-size: 13px;
+                    font-weight: 500;
+                    opacity: 1;
+                    font-family: "Inter-Medium";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .span-GUt-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-WUd-2 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-WUd-2 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    justify-content: start;
+                    left: 236px;
+                    top: 12px;
+                    height: 16px;
+                    mix-blend-mode: normal;
+                    color: rgba(115, 123, 123, 1);
+                    font-size: 13px;
+                    font-weight: 500;
+                    opacity: 1;
+                    font-family: "Inter-Medium";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .span-pxH-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-yRe-3 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-yRe-3 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 2;
+                    justify-content: start;
+                    left: 516px;
+                    top: 12px;
+                    height: 16px;
+                    mix-blend-mode: normal;
+                    color: rgba(115, 123, 123, 1);
+                    font-size: 13px;
+                    font-weight: 500;
+                    opacity: 1;
+                    font-family: "Inter-Medium";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .vec-rectangle-ceh-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 90px;
+                    height: 30px;
+                    border-radius: 15px;
+                    mix-blend-mode: normal;
+                    background: rgba(245, 251, 245, 1);
+                }
+                .span-Kqo-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-ZMP-2 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-ZMP-2 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    justify-content: start;
+                    left: 16px;
+                    top: 7px;
+                    height: 16px;
+                    mix-blend-mode: normal;
+                    color: rgba(86, 196, 86, 1);
+                    font-size: 13px;
+                    font-weight: 500;
+                    opacity: 1;
+                    font-family: "Inter-Medium";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .frame-fDk-4 {
+                    position: absolute;
+                    z-index: 4;
+                    left: 374px;
+                    top: 5px;
+                    width: 90px;
+                    height: 30px;
+                    mix-blend-mode: normal;
+                }
+                .img-pRd-5 {
+                    position: absolute;
+                    z-index: 4;
+                    border: unset !important;
+                    box-shadow: unset;
+                    left: 638.0000610351562px;
+                    top: 18px;
+                    width: 18px;
+                    height: 4px;
+                    mix-blend-mode: normal;
+                    --bg-img: var(--img-url);
+                    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/d31fca24bfc7e921ee428bea855f05e9179b37a4.png);
+                }
+                .img-pRd-5::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    opacity: 1;
+                    background-image: var(--bg-img);
+                    background-size: cover;
+                }
+                .span-aVs-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-ond-6 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-ond-6 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 5;
+                    justify-content: start;
+                    left: 0px;
+                    top: 12px;
+                    height: 16px;
+                    mix-blend-mode: normal;
+                    color: rgba(95, 104, 104, 1);
+                    font-size: 13px;
+                    font-weight: 500;
+                    opacity: 1;
+                    font-family: "Inter-Medium";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .vec-rectangle-lHS-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 39px;
+                    height: 40px;
+                    border-radius: 7px;
+                    mix-blend-mode: normal;
+                    background: rgba(242, 231, 225, 1);
+                }
+                .vec-rectangle-KoZ-2 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 1px;
+                    top: 3px;
+                    width: 38px;
+                    height: 34px;
+                    mix-blend-mode: normal;
+                    --bg-img: var(--img-url);
+                    --img-url: url(https://img.js.design/assets/img/622e9409f7f4d21c68f63a98.png);
+                }
+                .vec-rectangle-KoZ-2::before {
+                    background-repeat: no-repeat;
+                    background-size: 38px 38.00000066616957px;
+                    background-position: 0px 0px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    opacity: 1;
+                    background-image: var(--bg-img);
+                }
+                .frame-CwT-7 {
+                    position: absolute;
+                    z-index: 7;
+                    left: 53px;
+                    top: 0px;
+                    width: 39px;
+                    height: 40px;
+                    mix-blend-mode: normal;
+                }
+                .vec-rectangle-QCb-8 {
+                    position: absolute;
+                    z-index: 7;
+                    left: 0px;
+                    top: 54px;
+                    width: 664px;
+                    height: 1px;
+                    mix-blend-mode: normal;
+                    background: rgba(246, 246, 246, 1);
+                }
+                .frame-HOv-3 {
+                    position: absolute;
+                    z-index: 3;
+                    left: 42px;
+                    top: 353px;
+                    width: 664px;
+                    height: 55px;
+                    mix-blend-mode: normal;
+                }
+                .vec-rectangle-LgT-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 103px;
+                    height: 42.93px;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    mix-blend-mode: normal;
+                    background: rgba(129, 70, 255, 1);
+                }
+                .span-fkF-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-Tal-2 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-Tal-2 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    justify-content: start;
+                    left: 17px;
+                    top: 7px;
+                    width: 69.39px;
+                    height: 29.44px;
+                    mix-blend-mode: normal;
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 16px;
+                    font-weight: 700;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Bold";
+                    letter-spacing: 0px;
+                    white-space: normal;
+                }
+                .frame-button-start {
+                    position: absolute;
+                    z-index: 4;
+                    left: 24px;
+                    top: 120px;
+                    width: 103px;
+                    height: 42.93px;
+                    mix-blend-mode: normal;
+                }
+                .vec-rectangle-YxQ-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 103px;
+                    height: 42.93px;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    mix-blend-mode: normal;
+                    background: rgba(129, 70, 255, 1);
+                }
+                .span-gOS-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-Uam-2 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-Uam-2 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    justify-content: start;
+                    left: 34.7px;
+                    top: 7.36px;
+                    width: 34.69px;
+                    height: 29.44px;
+                    mix-blend-mode: normal;
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 16px;
+                    font-weight: 700;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Bold";
+                    letter-spacing: 0px;
+                    white-space: normal;
+                }
+                .frame-button-pause {
+                    position: absolute;
+                    z-index: 5;
+                    left: 24px;
+                    top: 191.15px;
+                    width: 103px;
+                    height: 42.93px;
+                    mix-blend-mode: normal;
+                }
+                .vec-rectangle-dLs-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 103px;
+                    height: 42.93px;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    mix-blend-mode: normal;
+                    background: rgba(129, 70, 255, 1);
+                }
+                .span-zYr-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-VBT-2 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-VBT-2 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    justify-content: start;
+                    left: 34.7px;
+                    top: 7.36px;
+                    width: 34.69px;
+                    height: 29.44px;
+                    mix-blend-mode: normal;
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 16px;
+                    font-weight: 700;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Bold";
+                    letter-spacing: 0px;
+                    white-space: normal;
+                }
+                .frame-button-stop {
+                    position: absolute;
+                    z-index: 6;
+                    left: 24px;
+                    top: 261.07px;
+                    width: 103px;
+                    height: 42.93px;
+                    mix-blend-mode: normal;
+                }
+                .img-sUC-7 {
+                    position: absolute;
+                    z-index: 6;
+                    border: unset !important;
+                    box-shadow: unset;
+                    left: 603.6939086914062px;
+                    top: 88px;
+                    width: 119.1328125px;
+                    height: 32.75927734375px;
+                    mix-blend-mode: normal;
+                    --bg-img: var(--img-url);
+                    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/dfc346480d7bf998f187b868a1c4a51ca7d10cbf.png);
+                }
+                .img-sUC-7::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    opacity: 1;
+                    background-image: var(--bg-img);
+                    background-size: cover;
+                }
+                .img-Pvf-8 {
+                    position: absolute;
+                    z-index: 7;
+                    border: unset !important;
+                    box-shadow: unset;
+                    left: 156.36575317382812px;
+                    top: 16.000030517578125px;
+                    width: 446.4306640625px;
+                    height: 328.20281982421875px;
+                    mix-blend-mode: normal;
+                    --bg-img: var(--img-url);
+                    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/43aea9fe5eb0be6e15aca93c53668a1ce0e28366.png);
+                }
+                .img-Pvf-8::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    opacity: 1;
+                    background-image: var(--bg-img);
+                    background-size: cover;
+                }
+                .frame-sub-3 {
+                    position: relative;
+                    z-index: 1;
+                    width: 745px;
+                    height: 423px;
+                    mix-blend-mode: normal;
+                    display: flex;
+                    order: 0;
+                    flex-shrink: 0;
+                    background-color: #fff;
+                    border-radius: 14px;
+                }
+                .vec-rectangle-XXj-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 335px;
+                    height: 423px;
+                    border-radius: 14px;
+                    mix-blend-mode: normal;
+                    background: rgba(255, 255, 255, 1);
+                }
+                .frame-sub-4 {
+                    position: relative;
+                    z-index: 2;
+                    width: 335px;
+                    height: 423px;
+                    mix-blend-mode: normal;
+                    display: block;
+                    order: 1;
+                    flex-shrink: 0;
+                    background-color: #fff;
+                    border-radius: 14px;
+                }
+                .frame-group-container-2 {
+                    position: absolute;
+                    z-index: 3;
+                    left: 278px;
+                    top: 546px;
+                    width: 1162px;
+                    height: auto;
+                    mix-blend-mode: normal;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+                .frame-sub-1 {
+                    position: relative;
+                    z-index: 1;
+                    width: 745px;
+                    height: 400px;
+                    mix-blend-mode: normal;
+                    display: flex;
+                    order: 0;
+                    flex-shrink: 0;
+                    background-color: #fff;
+                    border-radius: 14px;
+                    display: flex;       /* 使用flexbox布局 */
+                    justify-content: center; /* 水平居中 */
+                    align-items: flex-end;
+                    overflow: hidden;    /* 防止图片溢出容器 */
+                }
+                .frame-sub-1 img{
+
+                    width: 100%;
+                    height: auto;
+                }
+
+                .vec-rectangle-MsY-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 335px;
+                    height: 364px;
+                    border-radius: 14px;
+                    mix-blend-mode: normal;
+                    background: rgba(255, 255, 255, 1);
+                }
+                .span-FrM-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-miN-1 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-miN-1 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 0;
+                    justify-content: start;
+                    left: 0px;
+                    top: 0px;
+                    height: 26px;
+                    mix-blend-mode: normal;
+                    color: rgba(8, 22, 21, 1);
+                    font-size: 18px;
+                    line-height: 26px;
+                    font-weight: 400;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Regular";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .vec-rectangle-Yil-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 190px;
+                    height: 30px;
+                    border-radius: 8px;
+                    mix-blend-mode: normal;
+                    box-sizing: border-box;
+                    opacity: 1;
+                }
+                .vec-rectangle-Yil-1::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    z-index: 999;
+                    pointer-events: none;
+                    border-radius: 8px;
+                    border: 1px solid rgba(245, 245, 245, 1);
+                }
+                .span-pJc-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-Pqc-1 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-Pqc-1 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 0;
+                    justify-content: start;
+                    left: 17.14px;
+                    top: 0px;
+                    width: 135.71px;
+                    mix-blend-mode: normal;
+                    color: rgba(153, 156, 163, 1);
+                    font-size: 12px;
+                    line-height: 17.42px;
+                    font-weight: 400;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Regular";
+                    letter-spacing: 0px;
+                    white-space: normal;
+                }
+                .vec-circular-NjV-2 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 0px;
+                    top: 4px;
+                    width: 11px;
+                    height: 11px;
+                    mix-blend-mode: normal;
+                    background: rgba(67, 207, 124, 1);
+                    border-radius: 50%;
+                }
+                .frame-PSO-2 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 10px;
+                    top: 7px;
+                    width: 152.86px;
+                    height: 18px;
+                    mix-blend-mode: normal;
+                }
+                .frame-nsa-2 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 85px;
+                    top: 0px;
+                    width: 190px;
+                    height: 30px;
+                    mix-blend-mode: normal;
+                }
+                .frame-header-2 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 25px;
+                    top: 30px;
+                    width: 275px;
+                    height: 30px;
+                    display: block;
+                    mix-blend-mode: normal;
+                }
+
+                .img-connect-icon {
+                    position: absolute;
+                    z-index: 2;
+                    border: unset !important;
+                    box-shadow: unset;
+                    left: 65px;
+                    top: 112px;
+                    width: 208px;
+                    height: 208px;
+                    mix-blend-mode: normal;
+                    --bg-img: var(--img-url);
+                    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/d0d30903c74e9ffc8723124399a7a291f00a06c8.png);
+                }
+                .img-connect-icon::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    opacity: 1;
+                    background-image: var(--bg-img);
+                    background-size: cover;
+                }
+                .frame-sub-2 {
+                    position: relative;
+                    z-index: 2;
+                    width: 335px;
+                    height: 400px;
+                    mix-blend-mode: normal;
+                    display: flex;
+                    order: 1;
+                    flex-shrink: 0;
+                    background-color: #fff;
+                    border-radius: 14px;
+                }
+                .frame-group-container-1 {
+                    position: absolute;
+                    z-index: 4;
+                    left: 278px;
+                    top: 112px;
+                    width: 1162px;
+                    height: auto;
+                    mix-blend-mode: normal;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+                .frame-bXb-2 {
+                    position: relative;
+                    z-index: 2;
+                    height: 1006px;
+                    mix-blend-mode: normal;
+                    background: rgba(246, 246, 246, 1);
+                    overflow: hidden;
+                }
+            </style>
+            <!-- EEG/EOG检测部分的style -->
+            <style>
+                .vec-rectangle-MHM-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 103.72px;
+                    height: 36px;
+                    border-radius: 8px;
+                    mix-blend-mode: normal;
+                    box-sizing: border-box;
+                    opacity: 1;
+                }
+                .vec-rectangle-MHM-1::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    z-index: 999;
+                    pointer-events: none;
+                    border-radius: 8px;
+                    border: 1px solid rgba(245, 245, 245, 1);
+                }
+                .span-tyy-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-axR-1 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-axR-1 {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 0;
+                    justify-content: start;
+                    left: 0px;
+                    top: 0px;
+                    width: 65px;
+                    mix-blend-mode: normal;
+                    color: rgba(153, 156, 163, 1);
+                    font-size: 14px;
+                    line-height: 20.33px;
+                    font-weight: 400;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Regular";
+                    letter-spacing: 0px;
+                    white-space: normal;
+                }
+                .img-aMX-2 {
+                    position: absolute;
+                    z-index: 1;
+                    border: unset !important;
+                    box-shadow: unset;
+                    left: 69.52734375px;
+                    top: 8.112098693847656px;
+                    width: 9.17578125px;
+                    height: 5.77587890625px;
+                    mix-blend-mode: normal;
+                    --bg-img: var(--img-url);
+                    --img-url: url(https://img.js.design/assets/element/js_L4SW7Z8C9Kb/image/51c84b8240348313786f5c29aa41e4276e8669f8.png);
+                }
+                .img-aMX-2::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: "";
+                    opacity: 1;
+                    background-image: var(--bg-img);
+                    background-size: cover;
+                }
+                .frame-Uxe-2 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 10.65px;
+                    top: 7.94px;
+                    width: 78.16px;
+                    height: 21px;
+                    mix-blend-mode: normal;
+                }
+                .frame-blE-1 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 593.28px;
+                    top: 0px;
+                    width: 103.72px;
+                    height: 36px;
+                    mix-blend-mode: normal;
+                }
+                .p-text-heafder-title {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-heafder-title {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 1;
+                    justify-content: start;
+                    left: 0px;
+                    top: 5px;
+                    height: 27px;
+                    mix-blend-mode: normal;
+                    color: rgba(8, 22, 21, 1);
+                    font-size: 18px;
+                    line-height: 26.13px;
+                    font-weight: 400;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Regular";
+                    letter-spacing: 0px;
+                    white-space: nowrap;
+                }
+                .vec-rectangle-DPL-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 105.72px;
+                    height: 24px;
+                    border-radius: 4px;
+                    mix-blend-mode: normal;
+                    box-sizing: border-box;
+                    opacity: 1;
+                    background: rgba(255, 255, 255, 1);
+                }
+                .vec-rectangle-DPL-1::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    z-index: 999;
+                    pointer-events: none;
+                    border-radius: 4px;
+                    border: 1px solid rgba(234, 238, 247, 1);
+                }
+                .span-dna-1 {
+                    text-decoration-line: none;
+                }
+                .p-text-mDm-1 {
+                    display: inline;
+                    margin: 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+                .text-mDm-1 {
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 0;
+                    justify-content: start;
+                    height: 18px;
+                    left: 0px;
+                    top: 0px;
+                    mix-blend-mode: normal;
+                    color: rgba(68, 86, 124, 1);
+                    font-size: 12px;
+                    line-height: 17.42px;
+                    font-weight: 400;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Regular";
+                    letter-spacing: 0px;
+                    white-space: normal;
+                }
+                .frame-yLy-1 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 18.26px;
+                    top: 0px;
+                    width: 71px;
+                    height: 18px;
+                    mix-blend-mode: normal;
+                }
+                .vec-rectangle-spF-2 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 0px;
+                    top: 3px;
+                    width: 10.97px;
+                    height: 11px;
+                    border-radius: 3px;
+                    mix-blend-mode: normal;
+                    background: rgba(92, 87, 164, 1);
+                }
+                .frame-Zek-2 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 7.85px;
+                    top: 3.44px;
+                    width: 89.26px;
+                    height: 18px;
+                    mix-blend-mode: normal;
+                }
+                .frame-SwE-1 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 0px;
+                    top: 0px;
+                    width: 105.72px;
+                    height: 24px;
+                    mix-blend-mode: normal;
+                }
+                .vec-rectangle-AfP-1 {
+                    position: absolute;
+                    z-index: 0;
+                    left: 0px;
+                    top: 0px;
+                    width: 101.73px;
+                    height: 24px;
+                    border-radius: 6px;
+                    mix-blend-mode: normal;
+                    box-sizing: border-box;
+                    opacity: 1;
+                    background: rgba(255, 255, 255, 1);
+                }
+                .vec-rectangle-AfP-1::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    z-index: 999;
+                    pointer-events: none;
+                    border-radius: 6px;
+                    border: 1px solid rgba(234, 238, 247, 1);
+                }
+                .text-Qpj-1 {
+                    position: relative;
+                    flex-direction: column;
+                    z-index: 0;
+                    justify-content: start;
+                    height: 20px;
+                    mix-blend-mode: normal;
+                    color: rgba(68, 86, 124, 1);
+                    font-size: 12px;
+                    line-height: 17.42px;
+                    font-weight: 400;
+                    opacity: 1;
+                    font-family: "SourceHanSansCN-Regular";
+                    letter-spacing: 0px;
+                }
+                .frame-tKV-1 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 18.61px;
+                    top: 0px;
+                    width: 66px;
+                    height: 18px;
+                    mix-blend-mode: normal;
+                }
+                .vec-rectangle-GUO-2 {
+                    position: absolute;
+                    z-index: 1;
+                    left: 0px;
+                    top: 3px;
+                    width: 10.97px;
+                    height: 11px;
+                    border-radius: 3px;
+                    mix-blend-mode: normal;
+                    background: rgba(103, 105, 117, 1);
+                }
+                .frame-Xst-2 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 7.35px;
+                    top: 3.44px;
+                    width: 84.61px;
+                    height: 18px;
+                    mix-blend-mode: normal;
+                }
+                .frame-Jyh-2 {
+                    position: absolute;
+                    z-index: 2;
+                    left: 127.66px;
+                    top: 0px;
+                    width: 101.73px;
+                    height: 24px;
+                    mix-blend-mode: normal;
+                }
+                .frame-hhG-3 {
+                    position: absolute;
+                    z-index: 3;
+                    left: 177.5px;
+                    top: 6px;
+                    width: 229.39px;
+                    height: 24px;
+                    mix-blend-mode: normal;
+                }
+                .frame-header {
+                    position: absolute;
+                    z-index: 3;
+                    left: 18.07px;
+                    top: 25px;
+                    width: 697px;
+                    height: 36px;
+                    mix-blend-mode: normal;
+                }
+            </style>
+
+            <div class="frame-bXb-2">
+                <div class="frame-side-bar">
+                    <img src="{{ url_for('static', filename='assets/images/CMT-logo.png') }}" class="img-logo" />
+
+                    <div class="frame-frame-group1">
+                        <a class="frame-patient-container pointer-link" href="{{ url_for('patient') }}">
+                            <div class="img-down"></div>
+                            <div class="img-patient"></div>
+                        <div class="text-patient">
+                            <div class="p-text-patient">
+                                <span class="span-patient">王立群</span>
+                            </div>
+                        </div>
+                        </a>
+                        <div class="frame-rnK-2">
+                            <a class="frame-naodian-container" href="{{ url_for('EEG_record') }}" style="background-color:#8146ff;">
+                                <div class="text-naodian">
+                                    <div class="p-text-naodian">
+                                        <span class="span-TBj-1">脑电监测</span>
+                                    </div>
+                                </div>
+                                <div class="img-naodian"></div>
+                            </a>
+                            <a class="frame-shuimian-container" href="{{ url_for('sleep_report') }}">
+                                <div class="frame-shuimian-bng pointer-link"></div>
+                                <div class="text-EEM-2">
+                                    <div class="p-text-EEM-2">
+                                        <span class="span-bux-1">睡眠监测报告</span>
+                                    </div>
+                                </div>
+                                <div class="img-Jqy-3"></div>
+                            </a>
+                            <div class="rectangle-spliter-line"></div>
+                        </div>
+                    </div>
+                    <div class="vec-rectangle-Rmt-3"></div>
+                    <a class="frame-setting-container" href="{{ url_for('login') }}">
+                        <div class="img-fXG-1"></div>
+                        <div class="text-JEe-2">
+                            <div class="p-text-JEe-2">
+                                <span class="span-Ton-1">设置</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="frame-right">
+                    <div class="vec-rectangle-split-line"></div>
+                    <div class="vec-rectangle-top-bng">
+                        <div class="frame-zzz">
+                            <div class="frame-doctor">
+                                <div class="img-NFR-1"></div>
+                                <div class="text-qNf-2">
+                                    <div class="p-text-qNf-2">
+                                        <span class="span-RRX-1">王医生</span>
+                                    </div>
+                                </div>
+                                <div class="img-Vjk-3"></div>
+                            </div>
+                            <div class="img-ring"></div>
+                        </div>
+                        <div class="frame-top-left-container">
+                            <div class="vec-rectangle-container"></div>
+                            <div class="frame-PkB-2">
+                                <div class="text-search">
+                                    <div class="p-text-search">
+                                        <input
+                                            placeholder="搜索..."
+                                            type="text"
+                                            style="border: none; outline: none"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="img-search-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frame-group-container-1">
+                    <div class="frame-sub-1">
+                        <div class="frame-header">
+                            <div class="frame-blE-1">
+                                <div class="vec-rectangle-MHM-1"></div>
+                                <div class="frame-Uxe-2">
+                                    <div class="text-axR-1">
+                                        <div class="p-text-axR-1">
+                                            <span class="span-tyy-1">通道 2个</span>
+                                        </div>
+                                    </div>
+                                    <div class="img-aMX-2"></div>
+                                </div>
+                            </div>
+                            <div class="text-heafder-title">
+                                <div class="p-text-heafder-title">
+                                    <span>脑电图EEG\EOG</span>
+                                </div>
+                            </div>
+                            <div class="frame-hhG-3">
+                                <div class="frame-SwE-1">
+                                    <div class="vec-rectangle-DPL-1"></div>
+                                    <div class="frame-Zek-2">
+                                        <div class="frame-yLy-1">
+                                            <div class="text-mDm-1">
+                                                <div class="p-text-mDm-1">
+                                                    <span class="span-dna-1">眼电图</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vec-rectangle-spF-2"></div>
+                                    </div>
+                                </div>
+                                <div class="frame-Jyh-2">
+                                    <div class="vec-rectangle-AfP-1"></div>
+                                    <div class="frame-Xst-2">
+                                        <div class="frame-tKV-1">
+                                            <div class="text-Qpj-1">
+                                                <span>脑电图</span>
+                                            </div>
+                                        </div>
+                                        <div class="vec-rectangle-GUO-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='picture/picture_1.jpg') }}" />
+
+                    </div>
+                    <div class="frame-sub-2">
+                        <div class="frame-header-2">
+                            <div class="text-miN-1">
+                                <div class="p-text-miN-1">
+                                    <span class="span-FrM-1">连接状态</span>
+                                </div>
+                            </div>
+                            <div class="frame-nsa-2">
+                                <div class="vec-rectangle-Yil-1"></div>
+                                <div class="frame-PSO-2">
+                                    <div class="text-Pqc-1">
+                                        <div class="p-text-Pqc-1">
+                                            <span class="span-pJc-1">脑电帽在线</span>
+                                        </div>
+                                    </div>
+                                    <div class="vec-circular-NjV-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img-connect-icon"></div>
+                    </div>
+                </div>
+                <div class="frame-group-container-2">
+                    <div class="frame-sub-3">
+                        <div class="frame-header-3">
+                            <div class="text-kYA-1">
+                                <div class="p-text-kYA-1">
+                                    <span class="span-JpZ-1">脑电监测</span>
+                                </div>
+                            </div>
+                            <div class="img-RiF-2"></div>
+                        </div>
+                        <div class="frame-HOv-3">
+                            <div class="text-IZv-1">
+                                <div class="p-text-IZv-1">
+                                    <span class="span-XNd-1">Zion Dar</span>
+                                </div>
+                            </div>
+                            <div class="text-WUd-2">
+                                <div class="p-text-WUd-2">
+                                    <span class="span-GUt-1">18 May 2021</span>
+                                </div>
+                            </div>
+                            <div class="text-yRe-3">
+                                <div class="p-text-yRe-3">
+                                    <span class="span-pxH-1">124</span>
+                                </div>
+                            </div>
+                            <div class="frame-fDk-4">
+                                <div class="vec-rectangle-ceh-1"></div>
+                                <div class="text-ZMP-2">
+                                    <div class="p-text-ZMP-2">
+                                        <span class="span-Kqo-1">Diarrhea</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="img-pRd-5"></div>
+                            <div class="text-ond-6">
+                                <div class="p-text-ond-6">
+                                    <span class="span-aVs-1">01</span>
+                                </div>
+                            </div>
+                            <div class="frame-CwT-7">
+                                <div class="vec-rectangle-lHS-1"></div>
+                                <div class="vec-rectangle-KoZ-2"></div>
+                            </div>
+                            <div class="vec-rectangle-QCb-8"></div>
+                        </div>
+                        <div class="frame-button-start">
+                            <div class="vec-rectangle-LgT-1"></div>
+                            <div class="text-Tal-2">
+                                <div class="p-text-Tal-2">
+                                    <span class="span-fkF-1">开始监测</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-button-pause">
+                            <div class="vec-rectangle-YxQ-1"></div>
+                            <div class="text-Uam-2">
+                                <div class="p-text-Uam-2">
+                                    <span class="span-gOS-1">暂停</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-button-stop">
+                            <div class="vec-rectangle-dLs-1"></div>
+                            <div class="text-VBT-2">
+                                <div class="p-text-VBT-2">
+                                    <span class="span-zYr-1">结束</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img-sUC-7"></div>
+                        <div class="img-Pvf-8"></div>
+                    </div>
+                    <div class="frame-sub-4">
+                        <div class="frame-header-2">
+                            <div class="text-miN-1">
+                                <div class="p-text-miN-1">
+                                    <span class="span-FrM-1">上传数据</span>
+                                </div>
+                            </div>
+                            <div class="frame-nsa-2">
+                                <div class="vec-rectangle-Yil-1"></div>
+                                <div class="frame-PSO-2">
+                                    <div class="text-Pqc-1">
+                                        <div class="p-text-Pqc-1">
+                                            <span class="span-pJc-1">服务器在线</span>
+                                        </div>
+                                    </div>
+                                    <div class="vec-circular-NjV-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <form action="/EEG-record" method="post" enctype="multipart/form-data">
+                                <!-- 隐藏 file input -->
+                                <input type="file" id="file" name="file" required style="display: none;">
+
+                                <!-- label 元素用于触发 file input 的点击事件 -->
+                                <label class="img-upload-icon" for="file"></label>
+
+                                <span id="file-name" class="file-name"></span>
+
+                                <!-- 上传按钮 -->
+                                <button class="submit-icon" type="submit">上传</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('file').addEventListener('change', function(event) {
+                var fileInput = event.target;
+                var fileName = fileInput.files[0].name;
+                document.getElementById('file-name').textContent = fileName;
+            });
+        </script>
+    </body>
+</html>

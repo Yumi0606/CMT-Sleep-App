@@ -1,0 +1,130 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="./assets/images/CMT-logo.png" />
+    <meta name="description" content="可解释性多导睡眠监测系统" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>脑电监测</title>
+    <link href="assets/css/side-bar.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="frame-side-bar">
+        <img src="assets/images/CMT-logo.png" class="img-logo" />
+
+        <div class="frame-frame-group1">
+            <div class="frame-patient-container pointer-link">
+                <div class="img-down"></div>
+                <div class="img-patient"></div>
+                <div class="text-patient">
+                    <div class="p-text-patient">
+                        <span class="span-patient">王立群</span>
+                    </div>
+                </div>
+            </div>
+            <div class="frame-rnK-2">
+                <div class="frame-naodian-container">
+                    <div class="frame-naodian-bng"></div>
+                    <div class="text-naodian">
+                        <div class="p-text-naodian">
+                            <span class="span-TBj-1">脑电监测</span>
+                        </div>
+                    </div>
+                    <div class="img-naodian"></div>
+                </div>
+                <div class="frame-shuimian-container">
+                    <div class="frame-shuimian-bng pointer-link"></div>
+                    <div class="text-EEM-2">
+                        <div class="p-text-EEM-2">
+                            <span class="span-bux-1">睡眠监测报告</span>
+                        </div>
+                    </div>
+                    <div class="img-Jqy-3"></div>
+                </div>
+                <div class="rectangle-spliter-line"></div>
+            </div>
+        </div>
+        <div class="vec-rectangle-Rmt-3"></div>
+        <div class="frame-setting-container">
+            <div class="img-fXG-1"></div>
+            <div class="text-JEe-2">
+                <div class="p-text-JEe-2">
+                    <span class="span-Ton-1">设置</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            const myDiv = document.querySelector(".frame-patient-container");
+            myDiv.addEventListener("click", function () {
+                window.location.href = "patient.html";
+            });
+            const myDiv2 = document.querySelector(".frame-naodian-container");
+            myDiv2.addEventListener("click", function () {
+                window.location.href = "EEG-record.html";
+            });
+            const myDiv3 = document.querySelector(".frame-shuimian-container");
+            myDiv3.addEventListener("click", function () {
+                window.location.href = "sleep-report.html";
+            });
+            const myDiv4 = document.querySelector(".frame-setting-container");
+            myDiv4.addEventListener("click", function () {
+                window.location.href = "login.html";
+            });
+        </script>
+    </div>
+    <!-- <style>
+        .overlay_center {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 9999;
+        }
+        .overlay_top_left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        .overlay_top_center {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 9999;
+        }
+        .overlay_top_right {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 9999;
+        }
+        .overlay_bottom_left {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            z-index: 9999;
+        }
+        .overlay_bottom_center {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            z-index: 9999;
+        }
+
+        .popupMask {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 9999;
+        }
+    </style> -->
+</body>
