@@ -1,0 +1,70 @@
+# 忽略所有.h5文件,edf文件
+*.h5
+*.edf
+
+#忽略.zip压缩包
+*.zip
+# 忽略.idea目录
+.idea/
+
+# 忽略虚拟环境目录
+.venv/
+venv/
+.env/
+Lib/
+python/
+
+# 忽略.vscode目录
+.vscode/
+
+# 忽略.ipynb_checkpoints目录
+.ipynb_checkpoints/
+
+# 忽略Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 忽略Python生成的字节码文件
+*.pyc
+
+# 忽略Python的egg-info目录
+*.egg-info/
+
+# 忽略Python的pycache目录
+*.pytest_cache/
+
+# 忽略日志文件
+*.log
+*.log.*
+
+# 忽略系统生成的临时文件
+*.tmp
+*.tmp.*
+
+# 忽略编辑器备份文件
+*~
+*.swp
+*.swo
+*.bak
+
+# 忽略Mac系统生成的DS_Store文件
+.DS_Store
+
+# 忽略npm生成的node_modules目录
+node_modules/
+
+# 忽略Yarn生成的缓存文件和链接文件
+.yarn/cache/
+.yarn/link/
+
+#忽略程序result目录的图片
+/result/*
+!/result/
+
+# 以下是其他常见的忽略规则
+# 忽略所有以波浪号开头的隐藏文件
+.*~
+
+# 忽略所有以~结尾的备份文件
+*~
